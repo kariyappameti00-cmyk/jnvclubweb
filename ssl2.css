@@ -1,0 +1,13 @@
+P { color: #333333; font-size: 16px; font-family: Arial, sans-serif; }
+h1 { color: #050338; font-size: 32px; text-align: center; font-family: Arial, sans-serif; }
+h2 { color: #010113; font-size: 24px; text-align: center; font-family: Arial, sans-serif; }
+h3 { color: #2980b9; font-size: 20px; text-align: center; font-family: Arial, sans-serif; } 
+a { color: #e74c3c; text-decoration: none; }
+body { background-color: #c79479; margin: 0; padding: 0; }
+.card-box { background-color: #ffffff; border: 1px solid #dddddd; border-radius: 4px; padding: 20px; margin-bottom: 20px; }
+.btn { background-color: #3f96d0; color: #c95d5d; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+.btn:hover { background-color: #2980b9; }
+.center-container { display: flex; justify-content: center; align-items: center; height: 100vh; }
+.center-block { width: 100%; margin: 0 auto; max-width: 600px; }
+img { max-width: 100%; height: auto; display: block;}
+.avatar { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; }

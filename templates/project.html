@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Novodayans @ IIT DHARWAD - Student Club</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f5f7ff;
+            color: #222;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: linear-gradient(135deg, #24105f, #4b1fa6, #0077b6);
+            color: white;
+            padding: 15px 5%;
+        }
+
+        .top-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* LOGO SPACES */
+
+        .logo-box {
+            width: 90px;
+            height: 90px;
+            background: white;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .logo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .club-title {
+            text-align: center;
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        .club-title h1 {
+            font-size: 36px;
+            letter-spacing: 2px;
+        }
+
+        .club-title p {
+            margin-top: 8px;
+            font-size: 16px;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            margin-top: 15px;
+            text-align: center;
+            padding: 12px;
+            background: rgba(255,255,255,0.12);
+            border-radius: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 18px;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #ffd166;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            background:
+                linear-gradient(rgba(30,15,80,0.75), rgba(0,100,150,0.65)),
+                url("");
+
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+            padding: 60px 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .hero-button {
+            display: inline-block;
+            background: #ffd166;
+            color: #24105f;
+            padding: 14px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .hero-button:hover {
+            background: white;
+        }
+
+
+        /* ================= COMMON SECTION ================= */
+
+        section {
+            padding: 70px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
+            color: #321275;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+            font-size: 16px;
+        }
+
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+
+        /* ================= LEADERS ================= */
+
+        .leaders-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .leader-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .leader-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .leader-photo {
+            width: 100%;
+            height: 230px;
+            background: linear-gradient(135deg, #ddd, #eee);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+        }
+
+        .leader-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .leader-info {
+            padding: 20px;
+        }
+
+        .leader-info h3 {
+            color: #321275;
+            margin-bottom: 8px;
+        }
+
+        .leader-info p {
+            color: #666;
+        }
+
+
+        /* ================= ACTIVITIES ================= */
+
+        .activities {
+            background: white;
+        }
+
+        .activity-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .activity-card {
+            background: #f8f6ff;
+            padding: 30px;
+            border-radius: 18px;
+            text-align: center;
+            border: 1px solid #eee;
+            transition: 0.3s;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .activity-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .activity-card h3 {
+            color: #321275;
+            margin-bottom: 10px;
+        }
+
+        .activity-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+
+        /* ================= GALLERY ================= */
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-box {
+            height: 220px;
+            background: #ddd;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .gallery-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        /* ================= REGISTRATION ================= */
+
+        .registration {
+            background: linear-gradient(135deg, #24105f, #0077b6);
+            color: white;
+            text-align: center;
+        }
+
+        .registration h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .registration p {
+            margin-bottom: 25px;
+            font-size: 17px;
+        }
+
+        .register-button {
+            display: inline-block;
+            background: #ffd166;
+            color: #24105f;
+            text-decoration: none;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-weight: bold;
+        }
+
+        .register-button:hover {
+            background: white;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #160b38;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            margin: 7px;
+            color: #ddd;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            .leaders-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .activity-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .top-header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .club-title h1 {
+                font-size: 27px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 7px;
+            }
+
+            .hero h2 {
+                font-size: 34px;
+            }
+
+            .leaders-container,
+            .activity-container,
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="top-header">
+
+        <!-- LEFT INSTITUTE LOGO -->
+        <div class="logo-box">
+
+            <!-- Add your institute logo here -->
+            <img src="/Users/kariyappameti/Desktop/untitled folder/JNVlogo.jpeg">
+
+        </div>
+
+
+        <!-- CLUB TITLE -->
+
+        <div class="club-title">
+
+            <h1>Navodayans @ IIT DHARWAD</h1>
+
+            <p>Student Association & Community Club</p>
+
+        </div>
+
+
+        <!-- RIGHT CLUB LOGO -->
+
+        <div class="logo-box">
+
+            <!-- Add your club logo here -->
+            <img src="/Users/kariyappameti/Desktop/untitled folder/IIT-LOGO.jpg">
+
+        </div>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="#home">Home</a>
+
+        <a href="#about">About</a>
+
+        <a href="#leaders">Leaders</a>
+
+        <a href="#activities">Activities</a>
+
+        <a href="#gallery">Gallery</a>
+
+        <a href="#register">Registration</a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= HOME ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h2>Welcome to Novodayans @ IIT</h2>
+
+        <p>
+            A vibrant student community bringing together
+            technology, innovation, sports, culture and creativity.
+        </p>
+
+        <a href="#activities" class="hero-button">
+            Explore Activities
+        </a>
+
+        <a href="#register" class="hero-button">
+            Register Now
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+    <div class="section-title">
+
+        <h2>About Our Club</h2>
+
+        <p>Learn more about our student community</p>
+
+    </div>
+
+
+    <div class="about-content">
+
+        <p>
+            Nowadays @ IIT is a student-focused association that
+            provides opportunities for students to discover their
+            interests, develop new skills and participate in
+            exciting activities.
+        </p>
+
+        <br>
+
+        <p>
+            From Artificial Intelligence and Robotics to Sports,
+            Coding, Cultural and Aquatic activities, our club
+            encourages students to learn, participate and create
+            meaningful experiences together.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= LEADERS ================= -->
+
+<section id="leaders">
+
+    <div class="section-title">
+
+        <h2>Our Leaders</h2>
+
+        <p>Meet the people leading our student community</p>
+
+    </div>
+
+
+    <div class="leaders-container">
+
+
+        <!-- LEADER 1 -->
+
+        <div class="leader-card">
+
+            <div class="leader-photo">
+
+                <!-- Add Leader 1 photo -->
+                <img src="/Users/kariyappameti/Desktop/untitled folder/Profile Photo.png">
+
+            </div>
+
+            <div class="leader-info">
+
+                <h3>KP</h3>
+
+                <p>President</p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- LEADER 2 -->
+
+        <div class="leader-card">
+
+            <div class="leader-photo">
+
+                <!-- Add Leader 2 photo -->
+                <img src="/Users/kariyappameti/Desktop/untitled folder/adharsh photo.jpeg">
+
+            </div>
+
+            <div class="leader-info">
+
+                <h3>ADARSH</h3>
+
+                <p>Vice President</p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- LEADER 3 -->
+
+        <div class="leader-card">
+
+            <div class="leader-photo">
+
+                <!-- Add Leader 3 photo -->
+                <img src="/Users/kariyappameti/Desktop/untitled folder/umesh.jpeg">
+
+            </div>
+
+            <div class="leader-info">
+
+                <h3>UMESH</h3>
+
+                <p>Secretary</p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- LEADER 4 -->
+
+        <div class="leader-card">
+
+            <div class="leader-photo">
+
+                <!-- Add Leader 4 photo -->
+                <img src="/Users/kariyappameti/Desktop/untitled folder/veranna.jpeg">
+
+            </div>
+
+            <div class="leader-info">
+
+                <h3>VEERANNA </h3>
+
+                <p>Event Coordinator</p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ACTIVITIES ================= -->
+
+<section class="activities" id="activities">
+
+    <div class="section-title">
+
+        <h2>Our Activities</h2>
+
+        <p>Explore the different activities available for students</p>
+
+    </div>
+
+
+    <div class="activity-container">
+
+
+        <div class="activity-card">
+
+            <div class="activity-icon">🤖</div>
+
+            <h3>Robotics</h3>
+
+            <p>
+                Build robots, explore automation and participate
+                in exciting robotics projects.
+            </p>
+
+        </div>
+
+
+
+        <div class="activity-card">
+
+            <div class="activity-icon">🤖</div>
+
+            <h3>Artificial Intelligence</h3>
+
+            <p>
+                Learn AI concepts, machine learning and
+                intelligent technologies.
+            </p>
+
+        </div>
+
+
+
+        <div class="activity-card">
+
+            <div class="activity-icon">💻</div>
+
+            <h3>Coding</h3>
+
+            <p>
+                Improve programming skills through coding
+                challenges, workshops and competitions.
+            </p>
+
+        </div>
+
+
+
+        <div class="activity-card">
+
+            <div class="activity-icon">⚽</div>
+
+            <h3>Sports</h3>
+
+            <p>
+                Participate in indoor and outdoor sports
+                activities and tournaments.
+            </p>
+
+        </div>
+
+
+
+        <div class="activity-card">
+
+            <div class="activity-icon">🎭</div>
+
+            <h3>Cultural Activities</h3>
+
+            <p>
+                Music, dance, drama, art and other creative
+                cultural activities.
+            </p>
+
+        </div>
+
+
+
+        <div class="activity-card">
+
+            <div class="activity-icon">🏊</div>
+
+            <h3>Aquatic Activities</h3>
+
+            <p>
+                Explore swimming and other aquatic activities
+                available for students.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= GALLERY ================= -->
+
+<section id="gallery">
+
+    <div class="section-title">
+
+        <h2>Student Activities</h2>
+
+        <p>Moments from our student community</p>
+
+    </div>
+
+
+    <div class="gallery-container">
+
+
+        <!-- PHOTO 1 -->
+
+        <div class="gallery-box">
+
+            <!-- Add your first photo here -->
+            <img src="/Users/kariyappameti/Desktop/untitled folder/activites2.jpeg">
+
+        </div>
+
+
+        <!-- PHOTO 2 -->
+
+        <div class="gallery-box">
+
+            <!-- Add your second photo here -->
+            <img src="/Users/kariyappameti/Desktop/untitled folder/activites1.jpeg">
+
+        </div>
+
+
+        <!-- PHOTO 3 -->
+
+        <div class="gallery-box">
+
+            <!-- Add your third photo here -->
+            <img src="/Users/kariyappameti/Desktop/untitled folder/cult.jpg">
+
+        </div>
+
+
+        <!-- PHOTO 4 -->
+
+        <div class="gallery-box">
+
+            <!-- Add your fourth photo here -->
+            <img src="/Users/kariyappameti/Desktop/untitled folder/codingclub.jpeg">
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= REGISTRATION ================= -->
+
+<section class="registration" id="register">
+
+    <h2>Join Our Club</h2>
+
+    <p>
+        Interested students can register and participate
+        in our upcoming activities.
+    </p>
+
+
+    <!-- This can later be changed to your registration page -->
+
+    <a href="/registration" class="register-button">
+    Register Now
+</a>
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h3>Nowadays @ IIT</h3>
+
+    <p>Student Association & Community Club</p>
+
+    <p>© 2026 All Rights Reserved</p>
+
+</footer>
+
+
+</body>
+</html>

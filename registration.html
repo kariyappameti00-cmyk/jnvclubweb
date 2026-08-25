@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Club Registration</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #24105f, #0077b6);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 650px;
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        h1 {
+            text-align: center;
+            color: #321275;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #321275;
+            outline: none;
+        }
+
+        .activities {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .activity {
+            background: #f5f5ff;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .activity input {
+            width: auto;
+            margin-right: 8px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #321275;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background: #0077b6;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #321275;
+            font-weight: bold;
+        }
+
+        .message {
+            background: #d4edda;
+            color: #155724;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+
+            .activities {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Club Registration</h1>
+
+    <p class="subtitle">
+        Navodayans @ IIT Dharwad
+    </p>
+
+   
+        <div class="message">
+        
+        </div>
+    
+
+    <form action="/register" method="POST">
+
+        <!-- NAME -->
+        <div class="form-group">
+            <label for="name">Full Name</label>
+
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your full name"
+                required
+            >
+        </div>
+
+
+        <!-- EMAIL -->
+        <div class="form-group">
+            <label for="email">Email</label>
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+            >
+        </div>
+
+
+        <!-- PHONE -->
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+
+            <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Enter your phone number"
+                required
+            >
+        </div>
+
+
+        <!-- COLLEGE -->
+        <div class="form-group">
+            <label for="college">College / Institute</label>
+
+            <input
+                type="text"
+                id="college"
+                name="college"
+                placeholder="Enter your college or institute"
+                required
+            >
+        </div>
+
+
+        <!-- DEPARTMENT -->
+        <div class="form-group">
+            <label for="department">Department</label>
+
+            <select id="department" name="department" required>
+
+                <option value="">Select Department</option>
+
+                <option value="CSE">
+                    Computer Science Engineering
+                </option>
+
+                <option value="ECE">
+                    Electronics and Communication Engineering
+                </option>
+
+                <option value="ME">
+                    Mechanical Engineering
+                </option>
+
+                <option value="EE">
+                    Electrical Engineering
+                </option>
+
+                <option value="CE">
+                    Civil Engineering
+                </option>
+
+                <option value="Other">
+                    Other
+                </option>
+
+            </select>
+        </div>
+
+
+        <!-- YEAR -->
+        <div class="form-group">
+            <label for="year">Year of Study</label>
+
+            <select id="year" name="year" required>
+
+                <option value="">Select Year</option>
+
+                <option value="1st Year">
+                    1st Year
+                </option>
+
+                <option value="2nd Year">
+                    2nd Year
+                </option>
+
+                <option value="3rd Year">
+                    3rd Year
+                </option>
+
+                <option value="4th Year">
+                    4th Year
+                </option>
+
+            </select>
+        </div>
+
+
+        <!-- STATE -->
+        <div class="form-group">
+            <label for="state">State</label>
+
+            <input
+                type="text"
+                id="state"
+                name="state"
+                placeholder="Enter your state"
+                required
+            >
+        </div>
+
+
+        <!-- ACTIVITIES -->
+        <div class="form-group">
+
+            <label>Activities Interested In</label>
+
+            <div class="activities">
+
+                <label class="activity">
+                    <input
+                        type="checkbox"
+                        name="activities"
+                        value="Robotics"
+                    >
+                    🤖 Robotics
+                </label>
+
+                <label class="activity">
+                    <input
+                        type="checkbox"
+                        name="activities"
+                        value="Artificial Intelligence"
+                    >
+                    🤖 Artificial Intelligence
+                </label>
+
+                <label class="activity">
+                    <input
+                        type="checkbox"
+                        name="activities"
+                        value="Coding"
+                    >
+                    💻 Coding
+                </label>
+
+                <label class="activity">
+                    <input
+                        type="checkbox"
+                        name="activities"
+                        value="Sports"
+                    >
+                    ⚽ Sports
+                </label>
+
+                <label class="activity">
+                    <input
+                        type="checkbox"
+                        name="activities"
+                        value="Cultural Activities"
+                    >
+                    🎭 Cultural
+                </label>
+
+                <label class="activity">
+                    <input
+                        type="checkbox"
+                        name="activities"
+                        value="Aquatic Activities"
+                    >
+                    🏊 Aquatic
+                </label>
+
+            </div>
+
+        </div>
+
+
+        <!-- SUBMIT -->
+        <button type="submit">
+            Submit Registration
+        </button>
+
+    </form>
+
+
+    <a href="/" class="back">
+        ← Back to Home
+    </a>
+
+</div>
+
+</body>
+</html>
